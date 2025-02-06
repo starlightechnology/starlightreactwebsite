@@ -40,7 +40,6 @@ const styles = {
   reviewText: {
     marginBottom: "10px",
     fontSize: "16px",
-   
   },
   reviewer: {
     fontStyle: "italic",
@@ -203,17 +202,10 @@ function Homepage() {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer without Careers and Help links */}
       <footer style={styles.footer}>
         <div>
           &copy; {new Date().getFullYear()} Starlight Technology.
-          <a href="/careers" style={styles.footerLink}>
-            Careers
-          </a>
-          |
-          <a href="/help" style={styles.footerLink}>
-            Help
-          </a>
         </div>
       </footer>
     </div>
