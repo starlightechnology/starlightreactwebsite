@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react"; 
 import { Link } from "react-router-dom";
 
 const styles = {
   missionSection: {
-    backgroundColor: "#007BFF", // Blue background
+    position: "relative",
     color: "#D3D3D3", // Light grey font
     fontFamily: "Times New Roman, serif",
     textAlign: "center",
@@ -11,6 +11,11 @@ const styles = {
     fontSize: "24px",
     fontWeight: "bold",
     lineHeight: "1.5",
+    height: "100vh", // Full viewport height
+    backgroundColor: "#00068e", // Dark blue background
+    display: "flex", // To center the content
+    justifyContent: "center", // Center content horizontally
+    alignItems: "center", // Center content vertically
   },
   reviewsSection: {
     padding: "40px 20px",
@@ -121,16 +126,6 @@ const styles = {
 };
 
 function Homepage() {
-  const [showReviewButton, setShowReviewButton] = useState(false);
-
-  const handleButtonHover = () => {
-    setShowReviewButton(true);
-  };
-
-  const handleButtonLeave = () => {
-    setShowReviewButton(false);
-  };
-
   return (
     <div>
       {/* Mission Statement Section */}
@@ -163,8 +158,6 @@ function Homepage() {
 
         {/* Plus Button, shown initially */}
         <button
-          onMouseEnter={handleButtonHover}
-          onMouseLeave={handleButtonLeave}
           style={styles.plusButton}
         >
           +
@@ -173,10 +166,7 @@ function Homepage() {
         {/* Write a Review Button, becomes visible when hovered */}
         <Link to="/review">
           <button
-            style={{
-              ...styles.writeReviewButton,
-              ...(showReviewButton ? styles.writeReviewButtonHover : {}),
-            }}
+            style={styles.writeReviewButton}
           >
             Write a Review
           </button>
